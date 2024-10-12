@@ -50,6 +50,7 @@ export default function App() {
           "Image captured successfully",
           data.base64
         );
+        console.log()
       } catch (error) {
         console.error(error);
       }
@@ -60,9 +61,6 @@ export default function App() {
     <View style={styles.container}>
       <CameraView style={styles.camera} ref={cameraRef}>
         <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.button} onPress={toggleCameraFacing}>
-            <Text style={styles.text}>Flip Camera</Text>
-          </TouchableOpacity>
           <TouchableOpacity style={styles.button} onPress={takePicture}>
             <Text style={styles.text}>Take Picture</Text>
           </TouchableOpacity>

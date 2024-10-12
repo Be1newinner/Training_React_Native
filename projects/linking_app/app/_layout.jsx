@@ -1,9 +1,16 @@
 import { useEffect } from "react";
 import { Stack } from "expo-router";
 import * as Linking from "expo-linking";
+import { connectToDevTools } from "react-devtools-core";
 
 export default function Layout() {
   useEffect(() => {
+    if (__DEV__) {
+      connectToDevTools({
+        host: "localhost",
+        port: 8097,
+      });
+    }
     const handleDeepLink = async (url) => {
       const { path, queryParams } = Linking.parse(url);
       // Navigate based on path, for example:

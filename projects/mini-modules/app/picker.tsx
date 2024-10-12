@@ -8,7 +8,6 @@ export default function ImagePickerExample() {
   const [base64Image, setBase64Image] = useState<string | null>(null);
 
   const pickImage = async () => {
-    // No permissions request is necessary for launching the image library
     let result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.All,
       allowsEditing: true,
@@ -32,10 +31,7 @@ export default function ImagePickerExample() {
       });
       setBase64Image(base64);
       console.log("Base64 Image: ", base64);
-      Alert.alert(
-        "Image Converted to Base64!",
-        base64.substring(0, 50) + "..."
-      );
+      
     } catch (error) {
       console.error("Error converting image to base64:", error);
     }
