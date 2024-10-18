@@ -58,7 +58,7 @@ const ParentComponent = () => {
   );
 };
 
-export default ParentComponent;
+export default React.memo(ParentComponent);
 
 const styles = StyleSheet.create({
   image: {

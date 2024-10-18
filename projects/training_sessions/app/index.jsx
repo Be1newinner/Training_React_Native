@@ -1,7 +1,7 @@
-import C23_Redux from "./C23_Redux";
+import C1_UseState from "./C1_UseState";
 
 function App() {
-  return <C23_Redux />;
+  return <C1_UseState />;
 }
 
 export default App;
